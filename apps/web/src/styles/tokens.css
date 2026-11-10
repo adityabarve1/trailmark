@@ -1,0 +1,63 @@
+/* Trailmark design tokens. Light by default, dark via system or [data-theme]. */
+:root {
+  --paper: #F3F5FA;
+  --surface: #FFFFFF;
+  --surface-2: #F7F8FC;
+  --ink: #152036;
+  --ink-2: #3A4560;
+  --muted: #5E6880;
+  --line: #DFE3EC;
+  --track: #E5E9F1;
+  --accent: #3657F5;
+  --accent-ink: #FFFFFF;
+  --walker: #F59E0B;
+  --good: #0E8A5C;
+  --amber: #B97300;
+  --red: #C23549;
+  --danger: #B42335;
+  --banner-bg: #FFF4D9;
+  --banner-ink: #6E4600;
+  --shadow: 0 1px 2px rgba(21, 32, 54, .06), 0 6px 18px -10px rgba(21, 32, 54, .18);
+
+  --display: "Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
+  --body: "IBM Plex Sans", "Segoe UI", system-ui, -apple-system, sans-serif;
+
+  --r-s: 8px;
+  --r-m: 14px;
+  --r-l: 22px;
+  --ease: cubic-bezier(.2, .8, .2, 1);
+
+  --safe-top: env(safe-area-inset-top, 0px);
+  --safe-bottom: env(safe-area-inset-bottom, 0px);
+  color-scheme: light;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #0C1220;
+    --surface: #131B2D;
+    --surface-2: #18223A;
+    --ink: #E8ECF5;
+    --ink-2: #C5CCDC;
+    --muted: #98A2B8;
+    --line: #26304A;
+    --track: #222C44;
+    --accent: #7B93FF;
+    --accent-ink: #0C1220;
+    --good: #3CCB91;
+    --amber: #F2B23E;
+    --red: #FF7A8C;
+    --danger: #FF6B7D;
+    --banner-bg: #3A2A08;
+    --banner-ink: #FFD58A;
+    --shadow: 0 1px 2px rgba(0, 0, 0, .3), 0 8px 24px -12px rgba(0, 0, 0, .6);
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --paper: #0C1220; --surface: #131B2D; --surface-2: #18223A; --ink: #E8ECF5; --ink-2: #C5CCDC; --muted: #98A2B8;
+  --line: #26304A; --track: #222C44; --accent: #7B93FF; --accent-ink: #0C1220; --good: #3CCB91; --amber: #F2B23E;
+  --red: #FF7A8C; --danger: #FF6B7D; --banner-bg: #3A2A08; --banner-ink: #FFD58A;
+  --shadow: 0 1px 2px rgba(0, 0, 0, .3), 0 8px 24px -12px rgba(0, 0, 0, .6);
+  color-scheme: dark;
+}

@@ -1,0 +1,2276 @@
+{
+ "schema": "roadmap.v1",
+ "title": "Frontend Developer to Full Stack Java + AI Engineer",
+ "owner": {
+  "name": "Aditya Barve",
+  "headline": "Analyst (frontend developer), Dentsu Global Services, Pune",
+  "goal": "Interview-ready for Java full stack roles at Barclays, HSBC, Red Hat and product companies, with AI engineering as the edge"
+ },
+ "startDate": "2026-11-30",
+ "weeklyHoursTarget": 20,
+ "schedule": {
+  "slots": [
+   {
+    "id": "A",
+    "label": "Slot A",
+    "time": "05:40",
+    "minutes": 45,
+    "kind": "practice",
+    "note": "1–2 problems from the week's pattern"
+   },
+   {
+    "id": "B",
+    "label": "Slot B",
+    "time": "20:45",
+    "minutes": 120,
+    "kind": "topic",
+    "note": "60 min learn + 60 min build"
+   }
+  ],
+  "habits": [
+   "Gym"
+  ],
+  "fridayRule": "Friday's Slot B is revision of the week's notes (60 min)",
+  "weekend": "Saturday: 3 h project block. Sunday: 1.5 h practice + 30 min weekly review. Busy weekend: 90-minute minimum on Sunday.",
+  "dayPlan": [
+   {
+    "time": "05:30",
+    "what": "Wake up"
+   },
+   {
+    "time": "05:40–06:25",
+    "what": "Slot A: DSA"
+   },
+   {
+    "time": "06:30–07:50",
+    "what": "Gym"
+   },
+   {
+    "time": "07:50–08:55",
+    "what": "Breakfast, commute (system design audio)"
+   },
+   {
+    "time": "09:00–20:00",
+    "what": "Office"
+   },
+   {
+    "time": "20:00–20:45",
+    "what": "Dinner, reset"
+   },
+   {
+    "time": "20:45–22:45",
+    "what": "Slot B: main topic"
+   },
+   {
+    "time": "22:45–23:00",
+    "what": "Log + plan tomorrow"
+   },
+   {
+    "time": "23:00",
+    "what": "Sleep"
+   }
+  ]
+ },
+ "phases": [
+  {
+   "key": "P1",
+   "name": "Java and SQL foundations",
+   "months": "Dec 2026 – Feb 2027",
+   "line": "Java 21, concurrency, JVM, PostgreSQL, transactions, first Spring Boot API"
+  },
+  {
+   "key": "P2",
+   "name": "Backend and full stack: PayFlow",
+   "months": "Mar – May 2027",
+   "line": "Spring Boot production, Security, microservices, Kafka, Redis, production React"
+  },
+  {
+   "key": "P3",
+   "name": "DevOps and cloud: TradeDesk",
+   "months": "Jun – Jul 2027",
+   "line": "Linux, Docker, CI/CD, AWS, Kubernetes, Helm, GitOps, monitoring"
+  },
+  {
+   "key": "P4",
+   "name": "System design",
+   "months": "Aug 2027",
+   "line": "HLD and LLD case studies, payment system, order book; Python for AI"
+  },
+  {
+   "key": "P5",
+   "name": "Agentic AI: FinAgent + applications",
+   "months": "Sep – Oct 2027",
+   "line": "LLMs, RAG, tool calling, LangGraph, Spring AI, MCP, evals, guardrails"
+  },
+  {
+   "key": "P6",
+   "name": "Interview mode",
+   "months": "Nov 2027",
+   "line": "Company-specific prep, mocks every week, offers"
+  }
+ ],
+ "gates": [
+  "Spring Boot API runs, 95 DSA problems solved",
+  "PayFlow full stack done, 190 problems solved",
+  "PayFlow and TradeDesk both deployed",
+  "8 HLD + 4 LLD case studies, resume updated, start applying",
+  "FinAgent shipped with evals, 4 mock interviews done"
+ ],
+ "modules": [
+  {
+   "code": "M1",
+   "title": "Java Core",
+   "phase": "P1",
+   "when": "Weeks 1–5, December 2026",
+   "goal": "Write clean, tested, modern Java 21 and explain the internals interviewers ask about.",
+   "topics": [
+    {
+     "title": "Setup and fundamentals",
+     "subs": [
+      "JDK vs JRE vs JVM; installing JDK 21, JAVA_HOME, IntelliJ IDEA",
+      "Creating a Maven project; javac and java from the terminal",
+      "main method, packages, imports, classpath"
+     ]
+    },
+    {
+     "title": "Data types and operators",
+     "subs": [
+      "8 primitive types: sizes, ranges, default values",
+      "Wrapper classes, autoboxing/unboxing, Integer cache (-128 to 127)",
+      "Widening and narrowing casts, overflow behaviour",
+      "Arithmetic, relational, logical, bitwise and shift operators; precedence",
+      "var (local type inference) and when not to use it"
+     ]
+    },
+    {
+     "title": "Control flow and methods",
+     "subs": [
+      "if/else, classic switch, loops, labelled break/continue, enhanced for",
+      "Pass-by-value (and what it means for object references)",
+      "Method overloading, varargs, recursion, static vs instance methods"
+     ]
+    },
+    {
+     "title": "Arrays and Strings",
+     "subs": [
+      "1D/2D arrays, java.util.Arrays (sort, binarySearch, fill, asList)",
+      "String immutability, String pool, intern(), equals() vs ==",
+      "StringBuilder vs StringBuffer; common String methods; String.format"
+     ]
+    },
+    {
+     "title": "Object-oriented programming",
+     "subs": [
+      "Classes, objects, constructors, constructor chaining (this(), super())",
+      "Initialization order: static blocks, instance blocks, constructors",
+      "Encapsulation and access modifiers (private, default, protected, public)",
+      "Inheritance; overriding rules (covariant returns, access, exceptions)",
+      "Compile-time vs runtime polymorphism; dynamic dispatch",
+      "Abstract classes vs interfaces (default, static, private methods)",
+      "final for variables, methods and classes",
+      "Object class: equals(), hashCode() contract, toString(), clone()",
+      "Composition vs inheritance; nested, inner, local and anonymous classes"
+     ]
+    },
+    {
+     "title": "Records, enums, sealed types",
+     "subs": [
+      "Records: compact constructors, immutability, when to use them as DTOs",
+      "Enums with fields, methods and abstract methods; EnumMap, EnumSet",
+      "Sealed classes and interfaces (sealed / permits / non-sealed)"
+     ]
+    },
+    {
+     "title": "Exception handling",
+     "subs": [
+      "Hierarchy: Throwable, Error, Exception, RuntimeException",
+      "Checked vs unchecked; try/catch/finally; multi-catch",
+      "try-with-resources and AutoCloseable",
+      "Custom exceptions; wrapping with a cause; never swallowing exceptions",
+      "Reading stack traces"
+     ]
+    },
+    {
+     "title": "Generics",
+     "subs": [
+      "Generic classes, interfaces and methods; bounded type parameters",
+      "Wildcards: ? extends, ? super, and the PECS rule",
+      "Type erasure and its consequences; raw types"
+     ]
+    },
+    {
+     "title": "Collections Framework",
+     "subs": [
+      "Hierarchy: Iterable, Collection, List, Set, Queue, Deque, Map",
+      "ArrayList (growth, amortised O(1)) vs LinkedList",
+      "HashMap internals: buckets, hashing, load factor 0.75, resize, treeify at 8",
+      "LinkedHashMap (insertion/access order, LRU cache), TreeMap (red-black tree)",
+      "HashSet, LinkedHashSet, TreeSet; PriorityQueue (binary heap); ArrayDeque",
+      "Iterator, fail-fast vs fail-safe, ConcurrentModificationException",
+      "Comparable vs Comparator; Comparator.comparing().thenComparing()",
+      "Immutable collections (List.of, Map.of); Collections utility class",
+      "Big-O of every common operation"
+     ]
+    },
+    {
+     "title": "Functional Java and Streams",
+     "subs": [
+      "Lambdas, functional interfaces (Predicate, Function, Consumer, Supplier, BiFunction)",
+      "Method references (static, instance, constructor)",
+      "Stream pipeline: source, intermediate (lazy), terminal operations",
+      "map, filter, flatMap, sorted, distinct, limit, reduce",
+      "Collectors: toList, toMap, groupingBy, partitioningBy, joining, counting",
+      "Parallel streams and when not to use them",
+      "Optional: map, flatMap, orElse vs orElseGet, avoiding get()"
+     ]
+    },
+    {
+     "title": "Modern Java 17–21",
+     "subs": [
+      "Switch expressions, pattern matching for instanceof and switch",
+      "Record patterns, text blocks, sequenced collections",
+      "Virtual threads (intro only; covered in depth in M2)"
+     ]
+    },
+    {
+     "title": "Dates, I/O and money",
+     "subs": [
+      "java.time: LocalDate, LocalDateTime, Instant, ZonedDateTime, Duration, Period",
+      "File I/O with java.nio.file (Path, Files); BufferedReader",
+      "BigDecimal for money: scale, RoundingMode, why double is never used for money"
+     ]
+    },
+    {
+     "title": "Tooling and testing",
+     "subs": [
+      "JUnit 5: @Test, assertions, @BeforeEach, @ParameterizedTest",
+      "Maven lifecycle (compile, test, package, install), pom.xml, dependency scopes",
+      "Git: branching, merge vs rebase, pull requests, conventional commits"
+     ]
+    }
+   ],
+   "practice": [
+    "Console Bank Account app: create accounts, deposit, withdraw, transfer, statement (BigDecimal, records, enums, exceptions, streams)",
+    "Unit tests for every service method; push to GitHub with a clear README"
+   ],
+   "done": [
+    "Explain HashMap internals and the equals/hashCode contract on a whiteboard",
+    "Write a groupingBy + counting stream without looking anything up",
+    "Explain why BigDecimal (not double) is used for money"
+   ]
+  },
+  {
+   "code": "M2",
+   "title": "Advanced Java: Concurrency, JVM, Design",
+   "phase": "P1",
+   "when": "Weeks 6–8, January 2027",
+   "goal": "Handle the concurrency and JVM questions that banks ask in almost every Java round.",
+   "topics": [
+    {
+     "title": "Thread basics",
+     "subs": [
+      "Process vs thread; Thread vs Runnable vs Callable",
+      "Thread lifecycle states; start() vs run(); join, sleep, interrupt",
+      "Daemon threads, thread priorities, ThreadLocal"
+     ]
+    },
+    {
+     "title": "Synchronization and the memory model",
+     "subs": [
+      "Race conditions and critical sections; synchronized methods and blocks",
+      "Intrinsic locks and reentrancy; wait/notify/notifyAll",
+      "volatile and visibility; the happens-before relationship (Java Memory Model)",
+      "Deadlock: four conditions, lock ordering, detection with a thread dump",
+      "Livelock and starvation"
+     ]
+    },
+    {
+     "title": "Executor framework",
+     "subs": [
+      "ExecutorService; ThreadPoolExecutor parameters (core, max, keep-alive, queue)",
+      "Rejection policies; why Executors.newFixedThreadPool can hide problems",
+      "Future, Callable, invokeAll; ScheduledExecutorService",
+      "CompletableFuture: supplyAsync, thenApply, thenCompose, thenCombine, allOf, exceptionally"
+     ]
+    },
+    {
+     "title": "Locks, atomics and coordination",
+     "subs": [
+      "ReentrantLock, tryLock with timeout, fairness, Condition",
+      "ReadWriteLock, StampedLock",
+      "AtomicInteger, AtomicLong, LongAdder; compare-and-swap (CAS)",
+      "CountDownLatch, CyclicBarrier, Semaphore"
+     ]
+    },
+    {
+     "title": "Concurrent collections",
+     "subs": [
+      "ConcurrentHashMap internals (Java 8+), CopyOnWriteArrayList",
+      "BlockingQueue implementations; producer–consumer pattern"
+     ]
+    },
+    {
+     "title": "Virtual threads (Java 21)",
+     "subs": [
+      "Platform vs virtual threads; carrier threads",
+      "When they help (I/O-bound work) and when they don't (CPU-bound)",
+      "Pinning with synchronized; structured concurrency (preview concept)"
+     ]
+    },
+    {
+     "title": "JVM internals",
+     "subs": [
+      "Class loading: bootstrap, platform, application loaders; delegation model",
+      "Runtime areas: heap, stack, metaspace, PC register, native method stack",
+      "Bytecode basics with javap; the JIT compiler"
+     ]
+    },
+    {
+     "title": "Memory and garbage collection",
+     "subs": [
+      "Young/old generations, minor vs major GC",
+      "G1 and ZGC at a high level; -Xms, -Xmx and other key flags",
+      "Common memory leaks (static collections, listeners, caches)",
+      "OutOfMemoryError types; tools: jstack, jmap, heap dumps, VisualVM"
+     ]
+    },
+    {
+     "title": "Clean code and SOLID",
+     "subs": [
+      "Single responsibility, open/closed, Liskov, interface segregation, dependency inversion",
+      "DRY, KISS, YAGNI; naming, small methods, immutability"
+     ]
+    },
+    {
+     "title": "Design patterns (GoF)",
+     "subs": [
+      "Creational: Singleton (thread-safe, enum, double-checked locking), Factory Method, Abstract Factory, Builder, Prototype",
+      "Structural: Adapter, Decorator, Facade, Proxy, Composite",
+      "Behavioral: Strategy, Observer, Command, Template Method, Chain of Responsibility, State"
+     ]
+    }
+   ],
+   "practice": [
+    "Multithreaded money-transfer simulator: create a deadlock on purpose, then fix it with lock ordering",
+    "Producer–consumer payment queue with BlockingQueue and an ExecutorService",
+    "Refactor the simulator using Strategy, Builder and Observer"
+   ],
+   "done": [
+    "Explain volatile vs synchronized vs AtomicInteger with an example",
+    "Write a thread-safe Singleton in two different ways",
+    "Read a thread dump and point to the deadlock"
+   ]
+  },
+  {
+   "code": "M3",
+   "title": "SQL and Databases",
+   "phase": "P1",
+   "when": "Weeks 9–11, late January – February 2027",
+   "goal": "Write any interview SQL query and explain transactions, isolation and locking for money movement.",
+   "topics": [
+    {
+     "title": "Relational basics (PostgreSQL)",
+     "subs": [
+      "Tables, primary keys, foreign keys, composite and surrogate keys",
+      "Constraints: NOT NULL, UNIQUE, CHECK, DEFAULT",
+      "PostgreSQL types: numeric (money), timestamptz, uuid, jsonb, enums"
+     ]
+    },
+    {
+     "title": "DDL and DML",
+     "subs": [
+      "CREATE, ALTER, DROP; INSERT, UPDATE, DELETE",
+      "UPSERT with ON CONFLICT; RETURNING"
+     ]
+    },
+    {
+     "title": "Querying and aggregation",
+     "subs": [
+      "SELECT, WHERE, ORDER BY, LIMIT/OFFSET, DISTINCT, LIKE, IN, BETWEEN",
+      "NULL handling: IS NULL, COALESCE, NULLIF; CASE expressions",
+      "GROUP BY, HAVING, COUNT/SUM/AVG/MIN/MAX, ROLLUP"
+     ]
+    },
+    {
+     "title": "Joins",
+     "subs": [
+      "INNER, LEFT, RIGHT, FULL OUTER, CROSS and SELF joins",
+      "Semi-join (EXISTS) and anti-join (NOT EXISTS / LEFT JOIN ... IS NULL)"
+     ]
+    },
+    {
+     "title": "Subqueries and CTEs",
+     "subs": [
+      "Scalar and correlated subqueries",
+      "WITH clauses; recursive CTEs (e.g. org hierarchy)"
+     ]
+    },
+    {
+     "title": "Window functions",
+     "subs": [
+      "ROW_NUMBER, RANK, DENSE_RANK, NTILE",
+      "LAG and LEAD; running totals with SUM() OVER",
+      "PARTITION BY and ORDER BY in windows; top-N per group"
+     ]
+    },
+    {
+     "title": "Database design",
+     "subs": [
+      "ER modelling; 1NF, 2NF, 3NF, BCNF; denormalization trade-offs",
+      "Banking schema: customers, accounts, transactions, ledger_entries"
+     ]
+    },
+    {
+     "title": "Indexes and performance",
+     "subs": [
+      "B-tree and hash indexes; composite index column order",
+      "Covering and partial indexes; when indexes slow down writes",
+      "EXPLAIN and EXPLAIN ANALYZE; seq scan vs index scan"
+     ]
+    },
+    {
+     "title": "Transactions and isolation",
+     "subs": [
+      "ACID; BEGIN, COMMIT, ROLLBACK, SAVEPOINT",
+      "Isolation levels: Read Uncommitted, Read Committed, Repeatable Read, Serializable",
+      "Anomalies: dirty read, non-repeatable read, phantom, lost update, write skew",
+      "MVCC in PostgreSQL"
+     ]
+    },
+    {
+     "title": "Locking",
+     "subs": [
+      "Row-level locks; SELECT ... FOR UPDATE and SKIP LOCKED",
+      "Optimistic locking with a version column vs pessimistic locking",
+      "Database deadlocks and how to avoid them"
+     ]
+    },
+    {
+     "title": "Java and the database",
+     "subs": [
+      "JDBC: Connection, PreparedStatement, ResultSet; preventing SQL injection",
+      "Connection pooling with HikariCP; batch inserts"
+     ]
+    },
+    {
+     "title": "NoSQL overview",
+     "subs": [
+      "Document (MongoDB), key-value (Redis), wide-column (Cassandra), graph",
+      "When to choose SQL vs NoSQL"
+     ]
+    }
+   ],
+   "practice": [
+    "Design and build the bank schema with sample data",
+    "LeetCode SQL 50 (all of it across W10–W11)",
+    "JDBC money transfer that uses SELECT ... FOR UPDATE inside one transaction"
+   ],
+   "done": [
+    "Write top-N-per-group with a window function from memory",
+    "Explain how a double debit happens and which isolation/locking stops it",
+    "Read an EXPLAIN ANALYZE plan and suggest an index"
+   ]
+  },
+  {
+   "code": "M4",
+   "title": "Spring Boot Core",
+   "phase": "P1",
+   "when": "Weeks 12–13, February 2027",
+   "goal": "Build a clean, validated REST API backed by Spring Data JPA.",
+   "topics": [
+    {
+     "title": "Web fundamentals",
+     "subs": [
+      "HTTP methods and which are idempotent; status codes 2xx/3xx/4xx/5xx",
+      "Headers, cookies, content types; REST constraints and resource naming"
+     ]
+    },
+    {
+     "title": "Build tools",
+     "subs": [
+      "Maven vs Gradle; dependency scopes; multi-module projects"
+     ]
+    },
+    {
+     "title": "Spring Core",
+     "subs": [
+      "IoC container and ApplicationContext; what a bean is",
+      "@Component, @Service, @Repository, @Controller; @Configuration and @Bean",
+      "Constructor injection (preferred), @Autowired, @Qualifier, @Primary",
+      "Bean scopes (singleton, prototype, request); lifecycle (@PostConstruct, @PreDestroy)",
+      "AOP basics: proxies, @Aspect, cross-cutting concerns"
+     ]
+    },
+    {
+     "title": "Spring Boot",
+     "subs": [
+      "Starters and auto-configuration; how @SpringBootApplication works",
+      "@ConditionalOnClass / @ConditionalOnProperty",
+      "application.yml, @ConfigurationProperties, profiles (dev, test, prod)",
+      "Embedded server, DevTools"
+     ]
+    },
+    {
+     "title": "REST controllers",
+     "subs": [
+      "@RestController, @GetMapping/@PostMapping etc.",
+      "@PathVariable, @RequestParam, @RequestBody, ResponseEntity",
+      "DTOs vs entities; mapping with MapStruct"
+     ]
+    },
+    {
+     "title": "Validation and errors",
+     "subs": [
+      "Jakarta Bean Validation (@NotNull, @Size, @Email, @Positive), custom validators",
+      "@Valid; @ControllerAdvice and @ExceptionHandler",
+      "ProblemDetail (RFC 7807) for consistent error responses"
+     ]
+    },
+    {
+     "title": "Spring Data JPA",
+     "subs": [
+      "JPA vs Hibernate; @Entity, @Id, @GeneratedValue",
+      "JpaRepository, derived query methods, @Query (JPQL and native)",
+      "Entity states (transient, managed, detached), persistence context, dirty checking"
+     ]
+    },
+    {
+     "title": "Relationships",
+     "subs": [
+      "@OneToMany, @ManyToOne, @ManyToMany, @OneToOne; owning side",
+      "Cascade types, orphanRemoval",
+      "LAZY vs EAGER; the N+1 problem and fixes (JOIN FETCH, @EntityGraph)",
+      "LazyInitializationException and how to avoid it"
+     ]
+    }
+   ],
+   "practice": [
+    "Start PayFlow: schema, customer and account CRUD APIs with validation and global error handling"
+   ],
+   "done": [
+    "Explain how Spring creates and injects beans",
+    "Spot and fix an N+1 query in your own code"
+   ]
+  },
+  {
+   "code": "M5",
+   "title": "Spring Boot for Production",
+   "phase": "P2",
+   "when": "Weeks 14–18, March 2027",
+   "goal": "Ship PayFlow backend v1: secure, tested, observable, and safe for money.",
+   "topics": [
+    {
+     "title": "Transactions in Spring",
+     "subs": [
+      "@Transactional: propagation (REQUIRED, REQUIRES_NEW, NESTED), isolation, readOnly",
+      "Rollback rules (checked exceptions don't roll back by default)",
+      "Self-invocation pitfall (proxy-based transactions)"
+     ]
+    },
+    {
+     "title": "Data handling",
+     "subs": [
+      "Pageable, sorting, Specifications, projections",
+      "JPA auditing (@CreatedDate, @LastModifiedDate); soft deletes",
+      "Schema migrations with Flyway"
+     ]
+    },
+    {
+     "title": "Logging and monitoring",
+     "subs": [
+      "SLF4J + Logback, log levels, structured JSON logs",
+      "MDC and correlation IDs",
+      "Spring Boot Actuator (health, metrics, info) and Micrometer"
+     ]
+    },
+    {
+     "title": "Testing",
+     "subs": [
+      "Test pyramid; JUnit 5 + Mockito (mock, when/thenReturn, verify, ArgumentCaptor)",
+      "Slice tests: @WebMvcTest, @DataJpaTest; full @SpringBootTest with MockMvc",
+      "Testcontainers for PostgreSQL, Redis and Kafka",
+      "Coverage with JaCoCo"
+     ]
+    },
+    {
+     "title": "Spring Security",
+     "subs": [
+      "SecurityFilterChain, filters, AuthenticationManager, UserDetailsService",
+      "Password hashing with BCrypt",
+      "Stateless JWT auth: structure, signing, expiry, refresh tokens",
+      "CORS and CSRF (when each is needed)"
+     ]
+    },
+    {
+     "title": "OAuth2 and OpenID Connect",
+     "subs": [
+      "Roles: resource owner, client, authorization server, resource server",
+      "Authorization Code + PKCE, Client Credentials",
+      "Keycloak (a Red Hat project) as the auth server; resource-server config; scopes"
+     ]
+    },
+    {
+     "title": "Authorization",
+     "subs": [
+      "Roles vs authorities; @PreAuthorize and method security",
+      "Ownership checks (a user can only see their own accounts)"
+     ]
+    },
+    {
+     "title": "API design",
+     "subs": [
+      "OpenAPI/Swagger with springdoc",
+      "Versioning (URI vs header); pagination conventions; error contracts",
+      "Idempotency keys for POST requests"
+     ]
+    },
+    {
+     "title": "Caching, rate limiting, background work",
+     "subs": [
+      "Spring Cache with Redis: @Cacheable, @CacheEvict, TTLs, invalidation",
+      "Rate limiting with token bucket (Bucket4j + Redis)",
+      "@Async, @Scheduled, ShedLock for scheduled jobs on multiple instances"
+     ]
+    },
+    {
+     "title": "Money-handling patterns (fintech)",
+     "subs": [
+      "BigDecimal and currency handling end to end",
+      "Double-entry ledger design; idempotent transfers; reconciliation jobs"
+     ]
+    }
+   ],
+   "practice": [
+    "PayFlow v1: auth, accounts, transfers via a double-entry ledger, idempotency keys, caching, rate limiting, 80%+ coverage"
+   ],
+   "done": [
+    "Explain @Transactional propagation and the self-invocation trap",
+    "Walk through a JWT request from filter chain to controller",
+    "Show a test proving a transfer can't run twice with the same idempotency key"
+   ]
+  },
+  {
+   "code": "M6",
+   "title": "Microservices, Kafka and Fintech Security",
+   "phase": "P2",
+   "when": "Weeks 19–22, April 2027",
+   "goal": "Split PayFlow into services that communicate safely through REST and events.",
+   "topics": [
+    {
+     "title": "Architecture choices",
+     "subs": [
+      "Monolith vs modular monolith vs microservices; when NOT to split",
+      "Domain-driven design basics: bounded contexts, aggregates",
+      "Database per service; the 12-factor app"
+     ]
+    },
+    {
+     "title": "Spring Cloud",
+     "subs": [
+      "Spring Cloud Gateway: routing, filters, auth at the edge",
+      "Service discovery with Eureka; Config Server; client-side load balancing"
+     ]
+    },
+    {
+     "title": "Service communication",
+     "subs": [
+      "Synchronous: RestClient, WebClient, OpenFeign",
+      "Asynchronous: events and messaging",
+      "gRPC and Protocol Buffers basics; API contracts"
+     ]
+    },
+    {
+     "title": "Apache Kafka",
+     "subs": [
+      "Brokers, topics, partitions, offsets, replication, ISR",
+      "Producers: acks, retries, idempotent producer, keys and ordering",
+      "Consumers and consumer groups, rebalancing, offset commit strategies",
+      "At-most-once, at-least-once, exactly-once semantics",
+      "Dead-letter topics; Schema Registry and Avro (concept)"
+     ]
+    },
+    {
+     "title": "Event patterns",
+     "subs": [
+      "Event-driven architecture; transactional outbox; change data capture (Debezium idea)",
+      "Saga: choreography vs orchestration; compensating actions",
+      "CQRS and event sourcing (concepts)"
+     ]
+    },
+    {
+     "title": "Resilience",
+     "subs": [
+      "Resilience4j: circuit breaker, retry with backoff, timeouts, bulkhead, fallback"
+     ]
+    },
+    {
+     "title": "Distributed tracing",
+     "subs": [
+      "OpenTelemetry concepts, Micrometer Tracing, Zipkin/Jaeger; trace and span IDs"
+     ]
+    },
+    {
+     "title": "Real-time",
+     "subs": [
+      "WebSockets with STOMP; Server-Sent Events"
+     ]
+    },
+    {
+     "title": "Security for fintech",
+     "subs": [
+      "OWASP API Security Top 10 (BOLA, broken auth, excessive data exposure ...)",
+      "Input validation, SQL injection, mass assignment",
+      "TLS in transit, encryption at rest; hashing vs encryption",
+      "Secrets management (HashiCorp Vault concept); PII masking; audit logs",
+      "PCI-DSS basics; KYC/AML awareness"
+     ]
+    }
+   ],
+   "practice": [
+    "PayFlow v2: account, transaction and notification services; gateway; transfer events through Kafka with the outbox pattern; saga for transfers; tracing"
+   ],
+   "done": [
+    "Explain how you'd guarantee a transfer event is published exactly when the DB commit succeeds",
+    "Explain Kafka partitions, consumer groups and ordering guarantees"
+   ]
+  },
+  {
+   "code": "M7",
+   "title": "Production React, TypeScript and Next.js",
+   "phase": "P2",
+   "when": "Weeks 23–27, May 2027",
+   "goal": "Raise your existing React skill to senior level and ship PayFlow's frontend.",
+   "topics": [
+    {
+     "title": "JavaScript fundamentals (interview-critical)",
+     "subs": [
+      "Scope, closures, hoisting, this, prototypes",
+      "Event loop: call stack, microtasks vs macrotasks",
+      "Promises, async/await, error handling; debounce and throttle"
+     ]
+    },
+    {
+     "title": "TypeScript",
+     "subs": [
+      "Types vs interfaces; unions, intersections, literal types",
+      "Generics; narrowing and type guards; discriminated unions",
+      "Utility types: Partial, Pick, Omit, Record, ReturnType",
+      "Typing props, hooks and API responses; strict mode"
+     ]
+    },
+    {
+     "title": "React internals",
+     "subs": [
+      "Virtual DOM, reconciliation, keys; what triggers a re-render",
+      "Batching, StrictMode, Fiber at a high level",
+      "Concurrent features: useTransition, useDeferredValue"
+     ]
+    },
+    {
+     "title": "Hooks in depth",
+     "subs": [
+      "useState, useReducer, useContext, useRef",
+      "useEffect: dependencies, cleanup, and when you don't need an effect",
+      "useMemo and useCallback: when they actually help",
+      "Custom hooks; rules of hooks"
+     ]
+    },
+    {
+     "title": "React 19",
+     "subs": [
+      "Actions, useActionState, useOptimistic, use()",
+      "Server Components vs Client Components; React Compiler concept"
+     ]
+    },
+    {
+     "title": "State management",
+     "subs": [
+      "Local vs global vs server state; Context pitfalls",
+      "Redux Toolkit (slices, RTK Query) and Zustand",
+      "TanStack Query: caching, invalidation, mutations, optimistic updates"
+     ]
+    },
+    {
+     "title": "Forms",
+     "subs": [
+      "React Hook Form + Zod validation; accessible error messages"
+     ]
+    },
+    {
+     "title": "Next.js App Router",
+     "subs": [
+      "Layouts, nested routing, loading and error boundaries",
+      "Data fetching in Server Components; SSR, SSG, ISR; caching and revalidation",
+      "Server Actions, route handlers, middleware; image and font optimisation"
+     ]
+    },
+    {
+     "title": "Performance",
+     "subs": [
+      "Code splitting, React.lazy and Suspense, list virtualisation",
+      "Bundle analysis; Core Web Vitals (LCP, INP, CLS); React Profiler"
+     ]
+    },
+    {
+     "title": "Testing",
+     "subs": [
+      "Vitest + React Testing Library (query by role)",
+      "MSW for API mocks; Playwright end-to-end tests; Storybook interaction tests"
+     ]
+    },
+    {
+     "title": "Security, accessibility, scale",
+     "subs": [
+      "XSS, CSRF, Content Security Policy; token storage (httpOnly cookies vs localStorage)",
+      "WCAG 2.2, ARIA, keyboard navigation (your design-system strength)",
+      "Monorepos (Turborepo/Nx); micro-frontends (Module Federation)"
+     ]
+    },
+    {
+     "title": "Frontend system design",
+     "subs": [
+      "Design a dashboard, an autocomplete, an infinite feed",
+      "Component API design for a design system"
+     ]
+    }
+   ],
+   "practice": [
+    "PayFlow frontend: Next.js + TypeScript, login with refresh tokens, dashboard, transfers with optimistic UI, transaction charts, E2E tests"
+   ],
+   "done": [
+    "Explain the event loop output for a tricky promise/setTimeout snippet",
+    "Explain when a component re-renders and how you'd stop an unnecessary one"
+   ]
+  },
+  {
+   "code": "M8",
+   "title": "Linux, Networking and Docker",
+   "phase": "P3",
+   "when": "Weeks 28–29, June 2027",
+   "goal": "Be comfortable on a Linux server and containerise the whole PayFlow stack.",
+   "topics": [
+    {
+     "title": "Linux essentials",
+     "subs": [
+      "Filesystem hierarchy; navigation; permissions (rwx, chmod, chown); users and groups",
+      "Processes: ps, top, kill, signals; systemd services; journalctl",
+      "grep, sed, awk, pipes, redirection, environment variables, cron",
+      "ssh and key-based login; bash scripting basics"
+     ]
+    },
+    {
+     "title": "Networking",
+     "subs": [
+      "OSI vs TCP/IP model; IP addresses, subnets and CIDR",
+      "DNS resolution; TCP three-way handshake vs UDP",
+      "HTTP/1.1 vs HTTP/2 vs HTTP/3; TLS handshake",
+      "Proxies and reverse proxies; L4 vs L7 load balancers",
+      "Tools: curl, ss/netstat, dig, traceroute"
+     ]
+    },
+    {
+     "title": "Docker concepts",
+     "subs": [
+      "Containers vs VMs; images, layers, registries; container lifecycle",
+      "Linux namespaces and cgroups (Red Hat interviewers like this)"
+     ]
+    },
+    {
+     "title": "Dockerfiles",
+     "subs": [
+      "FROM, RUN, COPY, CMD vs ENTRYPOINT, ARG vs ENV",
+      "Layer caching, .dockerignore, multi-stage builds",
+      "Small images (distroless, alpine); running as non-root",
+      "JVM in containers (memory flags); Spring Boot layered jars, Jib or buildpacks"
+     ]
+    },
+    {
+     "title": "Storage and networking",
+     "subs": [
+      "Volumes vs bind mounts; bridge networks; port mapping"
+     ]
+    },
+    {
+     "title": "Docker Compose",
+     "subs": [
+      "Services, depends_on, health checks, env files",
+      "Running PostgreSQL + Redis + Kafka + your services locally"
+     ]
+    },
+    {
+     "title": "Container security",
+     "subs": [
+      "Image scanning with Trivy; secrets handling; Podman (Red Hat's daemonless alternative)"
+     ]
+    }
+   ],
+   "practice": [
+    "Whole PayFlow stack starts with one command: docker compose up"
+   ],
+   "done": [
+    "Explain what happens from typing a URL to seeing the page",
+    "Explain multi-stage builds and shrink one of your images by 50%+"
+   ]
+  },
+  {
+   "code": "M9",
+   "title": "CI/CD and AWS",
+   "phase": "P3",
+   "when": "Weeks 30–31, June 2027",
+   "goal": "Every push is built, tested and deployed automatically to the cloud.",
+   "topics": [
+    {
+     "title": "CI/CD concepts",
+     "subs": [
+      "Continuous integration vs delivery vs deployment",
+      "Branching strategies: trunk-based vs GitFlow; artifacts and environments"
+     ]
+    },
+    {
+     "title": "GitHub Actions",
+     "subs": [
+      "Workflows, triggers, jobs, steps, runners",
+      "Caching Maven and npm; matrix builds; secrets",
+      "Build and push Docker images; a deploy job with approvals"
+     ]
+    },
+    {
+     "title": "Quality gates",
+     "subs": [
+      "SonarQube/SonarCloud; coverage thresholds",
+      "Dependabot and dependency scanning; semantic versioning"
+     ]
+    },
+    {
+     "title": "AWS core services",
+     "subs": [
+      "IAM: users, roles, policies, least privilege",
+      "EC2 and security groups; S3; RDS",
+      "VPC: public/private subnets, NAT; Application Load Balancer",
+      "ECS/Fargate and ECR; CloudWatch; Secrets Manager",
+      "Cost control: free tier limits, billing alerts (set these first)"
+     ]
+    },
+    {
+     "title": "Infrastructure as Code (intro)",
+     "subs": [
+      "Terraform basics: providers, resources, state, plan and apply"
+     ]
+    }
+   ],
+   "practice": [
+    "PayFlow pipeline: test, scan, build images, deploy to AWS; live URL in the README"
+   ],
+   "done": [
+    "Draw your deployment architecture (VPC, subnets, ALB, ECS, RDS) from memory"
+   ]
+  },
+  {
+   "code": "M10",
+   "title": "Kubernetes, Observability and OpenShift",
+   "phase": "P3",
+   "when": "Weeks 32–35, July 2027",
+   "goal": "Run a microservices system on Kubernetes with monitoring, autoscaling and GitOps.",
+   "topics": [
+    {
+     "title": "Architecture",
+     "subs": [
+      "Control plane: API server, etcd, scheduler, controller manager",
+      "Nodes: kubelet, kube-proxy, container runtime; kubectl essentials"
+     ]
+    },
+    {
+     "title": "Workloads",
+     "subs": [
+      "Pods, ReplicaSets, Deployments (rolling update, rollback)",
+      "StatefulSets, DaemonSets, Jobs and CronJobs"
+     ]
+    },
+    {
+     "title": "Networking",
+     "subs": [
+      "Services: ClusterIP, NodePort, LoadBalancer; cluster DNS",
+      "Ingress and ingress controllers; NetworkPolicies"
+     ]
+    },
+    {
+     "title": "Configuration",
+     "subs": [
+      "ConfigMaps and Secrets; environment variables vs mounted files"
+     ]
+    },
+    {
+     "title": "Reliability and scaling",
+     "subs": [
+      "Liveness, readiness and startup probes",
+      "Requests and limits; Horizontal Pod Autoscaler; PodDisruptionBudget"
+     ]
+    },
+    {
+     "title": "Storage",
+     "subs": [
+      "PersistentVolume, PersistentVolumeClaim, StorageClass"
+     ]
+    },
+    {
+     "title": "Security",
+     "subs": [
+      "Namespaces; RBAC (Role, ClusterRole, bindings); ServiceAccounts"
+     ]
+    },
+    {
+     "title": "Packaging and delivery",
+     "subs": [
+      "Helm charts, values and templates; Kustomize",
+      "GitOps with Argo CD"
+     ]
+    },
+    {
+     "title": "Observability",
+     "subs": [
+      "Metrics with Prometheus (PromQL basics); Grafana dashboards",
+      "Logs with Loki or ELK; traces with Jaeger/Tempo",
+      "Golden signals; SLI, SLO, SLA; alerting"
+     ]
+    },
+    {
+     "title": "OpenShift (Red Hat)",
+     "subs": [
+      "What OpenShift adds: Routes, Builds/S2I, Operators, security context constraints",
+      "Deploying to the Red Hat Developer Sandbox"
+     ]
+    },
+    {
+     "title": "Performance",
+     "subs": [
+      "Load testing with k6 (virtual users, thresholds); JVM tuning in containers"
+     ]
+    }
+   ],
+   "practice": [
+    "TradeDesk on Kubernetes with Helm, HPA, Prometheus/Grafana dashboards, Argo CD; publish k6 load-test numbers"
+   ],
+   "done": [
+    "Explain what happens when you run kubectl apply on a Deployment",
+    "Debug a CrashLoopBackOff pod using logs, describe and events"
+   ]
+  },
+  {
+   "code": "M11",
+   "title": "System Design (HLD)",
+   "phase": "P4",
+   "when": "Weeks 36–39, August 2027",
+   "goal": "Lead a 45-minute high-level design round with a clear structure and real trade-offs.",
+   "topics": [
+    {
+     "title": "Interview framework",
+     "subs": [
+      "Functional and non-functional requirements",
+      "Back-of-the-envelope estimates: QPS, storage, bandwidth",
+      "API design, data model, high-level diagram, deep dives, trade-offs"
+     ]
+    },
+    {
+     "title": "Scalability",
+     "subs": [
+      "Vertical vs horizontal scaling; stateless services",
+      "Load balancing algorithms: round robin, least connections, consistent hashing"
+     ]
+    },
+    {
+     "title": "Caching",
+     "subs": [
+      "Client, CDN, application and database caching",
+      "Cache-aside, write-through, write-back; eviction (LRU, LFU), TTL",
+      "Cache stampede and hot keys"
+     ]
+    },
+    {
+     "title": "Databases at scale",
+     "subs": [
+      "Replication: leader–follower, multi-leader; read replicas",
+      "Sharding (range, hash, directory) and partitioning; rebalancing",
+      "Choosing SQL vs NoSQL; denormalization"
+     ]
+    },
+    {
+     "title": "Distributed systems fundamentals",
+     "subs": [
+      "CAP and PACELC; strong vs eventual vs read-your-writes consistency",
+      "Quorums; consensus (Raft at a high level); leader election; clock skew"
+     ]
+    },
+    {
+     "title": "Messaging",
+     "subs": [
+      "Queues vs pub-sub; delivery guarantees; ordering; backpressure; idempotent consumers"
+     ]
+    },
+    {
+     "title": "Core building blocks",
+     "subs": [
+      "API gateway; rate limiting (token bucket, sliding window)",
+      "Bloom filters; distributed IDs (Snowflake); distributed locks",
+      "2PC vs saga; idempotency everywhere money moves"
+     ]
+    },
+    {
+     "title": "Reliability",
+     "subs": [
+      "Redundancy, failover, multi-region; disaster recovery (RPO, RTO)"
+     ]
+    },
+    {
+     "title": "Case studies (do each one timed)",
+     "subs": [
+      "URL shortener; rate limiter; notification system",
+      "Payment system (UPI/Razorpay-style); digital wallet",
+      "Chat app (WhatsApp); news feed; stock exchange order book"
+     ]
+    }
+   ],
+   "practice": [
+    "Write a one-page design for each case study with a diagram; explain it out loud in 30 minutes"
+   ],
+   "done": [
+    "Design a payment system end to end, including idempotency and reconciliation",
+    "8 HLD case studies written up"
+   ]
+  },
+  {
+   "code": "M12",
+   "title": "Low-Level Design (LLD)",
+   "phase": "P4",
+   "when": "Week 38, August 2027 (and revision after)",
+   "goal": "Turn a vague problem into clean classes, patterns and working code in 60 minutes.",
+   "topics": [
+    {
+     "title": "Approach",
+     "subs": [
+      "Clarify requirements; identify entities and relationships",
+      "Draw a class diagram; apply SOLID and patterns; write core code; handle concurrency"
+     ]
+    },
+    {
+     "title": "UML",
+     "subs": [
+      "Class diagrams (association, aggregation, composition, inheritance)",
+      "Sequence diagrams"
+     ]
+    },
+    {
+     "title": "Case studies",
+     "subs": [
+      "Parking lot; ATM; Splitwise; elevator system; BookMyShow",
+      "LRU cache; rate limiter class; logger; vending machine; library management"
+     ]
+    }
+   ],
+   "practice": [
+    "Code 4 case studies fully in Java with tests"
+   ],
+   "done": [
+    "4 LLD case studies coded and pushed to GitHub"
+   ]
+  },
+  {
+   "code": "M13",
+   "title": "Python for AI",
+   "phase": "P4",
+   "when": "Week 40, late August 2027",
+   "goal": "Enough Python to build AI services with LangGraph and FastAPI.",
+   "topics": [
+    {
+     "title": "Language",
+     "subs": [
+      "Syntax, data types, list/dict/set comprehensions",
+      "Functions, *args/**kwargs, decorators, generators",
+      "Classes, dataclasses, type hints, exceptions"
+     ]
+    },
+    {
+     "title": "Environment",
+     "subs": [
+      "venv or uv, pip, requirements files, modules and packages"
+     ]
+    },
+    {
+     "title": "Async",
+     "subs": [
+      "async/await and asyncio basics"
+     ]
+    },
+    {
+     "title": "FastAPI",
+     "subs": [
+      "Routes, Pydantic models, dependency injection, async endpoints"
+     ]
+    },
+    {
+     "title": "Libraries",
+     "subs": [
+      "httpx/requests, pandas basics, Jupyter notebooks"
+     ]
+    }
+   ],
+   "practice": [
+    "A small FastAPI service with two endpoints and Pydantic validation"
+   ],
+   "done": [
+    "Comfortable reading and writing LangGraph example code"
+   ]
+  },
+  {
+   "code": "M14",
+   "title": "Agentic AI Engineering",
+   "phase": "P5",
+   "when": "Weeks 41–46, September – October 2027",
+   "goal": "Build, evaluate and safely deploy agents that retrieve data and take actions.",
+   "topics": [
+    {
+     "title": "LLM fundamentals",
+     "subs": [
+      "Tokens and tokenisation; context windows",
+      "Transformers and attention at an intuitive level",
+      "Temperature, top-p; hallucinations and why they happen",
+      "Choosing a model: quality vs cost vs latency"
+     ]
+    },
+    {
+     "title": "Prompt engineering",
+     "subs": [
+      "System prompts, few-shot examples, step-by-step reasoning",
+      "XML/JSON structuring; structured outputs and JSON schemas",
+      "Prompt templates and versioning"
+     ]
+    },
+    {
+     "title": "Working with LLM APIs",
+     "subs": [
+      "Messages API, streaming, token counting and cost, rate limits, retries",
+      "Java (Spring AI ChatClient) and Python SDKs"
+     ]
+    },
+    {
+     "title": "Embeddings and vector search",
+     "subs": [
+      "Embedding models; cosine similarity",
+      "Vector stores: pgvector, Chroma, Pinecone; HNSW index idea; metadata filters"
+     ]
+    },
+    {
+     "title": "Retrieval-Augmented Generation (RAG)",
+     "subs": [
+      "Ingestion: loading, chunking strategies, overlap, metadata",
+      "Retrieval, hybrid search (BM25 + vectors), reranking, query rewriting",
+      "Citations; RAG evaluation (faithfulness, relevance); common failure modes"
+     ]
+    },
+    {
+     "title": "Tool use / function calling",
+     "subs": [
+      "Tool schemas; parsing tool calls; safe execution; parallel tool calls"
+     ]
+    },
+    {
+     "title": "Agents and workflows",
+     "subs": [
+      "Agent loop (reason, act, observe — ReAct); planning",
+      "Workflow patterns: prompt chaining, routing, parallelisation, orchestrator–workers, evaluator–optimizer",
+      "When a simple workflow beats an agent"
+     ]
+    },
+    {
+     "title": "Frameworks",
+     "subs": [
+      "LangGraph: state graphs, nodes, edges, conditional edges, checkpoints",
+      "LangChain basics; Spring AI (advisors, tools, vector stores); how to choose"
+     ]
+    },
+    {
+     "title": "Memory and context",
+     "subs": [
+      "Short-term conversation memory; long-term memory; summarisation; context management"
+     ]
+    },
+    {
+     "title": "Model Context Protocol (MCP)",
+     "subs": [
+      "Clients and servers; tools, resources, prompts",
+      "Build an MCP server in Python or Java"
+     ]
+    },
+    {
+     "title": "Multi-agent systems",
+     "subs": [
+      "Supervisor and handoff patterns; shared state",
+      "Human-in-the-loop: interrupts and approvals before risky actions"
+     ]
+    },
+    {
+     "title": "Production AI",
+     "subs": [
+      "Evals: golden datasets, LLM-as-judge, regression tests in CI",
+      "Guardrails: input/output validation, prompt-injection defences, PII redaction",
+      "Observability with Langfuse or LangSmith traces",
+      "Cost and latency: caching, prompt caching, smaller models",
+      "Security for agents that touch money"
+     ]
+    },
+    {
+     "title": "Beyond the basics",
+     "subs": [
+      "Prompting vs RAG vs fine-tuning; local models with Ollama; responsible AI"
+     ]
+    }
+   ],
+   "practice": [
+    "FinAgent: RAG over bank policy documents, tools that call PayFlow APIs, human approval before money moves, MCP server, eval suite with scores in the README"
+   ],
+   "done": [
+    "Explain RAG vs fine-tuning and when you'd use each",
+    "Show an eval run and explain one failure you fixed"
+   ]
+  },
+  {
+   "code": "M15",
+   "title": "Interview Preparation",
+   "phase": "P6",
+   "when": "Weeks 47–52, October – November 2027",
+   "goal": "Convert interviews into offers.",
+   "topics": [
+    {
+     "title": "Technical revision",
+     "subs": [
+      "Java: collections, concurrency, JVM, Java 8–21 features",
+      "Spring Boot: DI, transactions, security, JPA pitfalls",
+      "SQL: joins, windows, isolation, indexes",
+      "System design: 8 case studies, timed"
+     ]
+    },
+    {
+     "title": "Project deep-dives",
+     "subs": [
+      "2-minute and 10-minute versions of each project",
+      "Hardest bug, key trade-off, what you'd change, numbers (latency, coverage, load)"
+     ]
+    },
+    {
+     "title": "Behavioral (STAR)",
+     "subs": [
+      "8 stories: design-system work, a production bug, a conflict, a tight deadline",
+      "Learning fast, ownership, a failure, helping a teammate"
+     ]
+    },
+    {
+     "title": "Company-specific",
+     "subs": [
+      "Banks (Barclays, HSBC): Java, Spring, SQL, concurrency, security, \"how do you avoid a double debit?\"",
+      "Red Hat: Linux, containers, Kubernetes/OpenShift, your open-source contribution",
+      "Product companies: timed DSA medium–hard, system design depth"
+     ]
+    },
+    {
+     "title": "Offer stage",
+     "subs": [
+      "Researching pay bands; negotiation basics; comparing offers"
+     ]
+    }
+   ],
+   "practice": [
+    "2 mock interviews a week from W47 (peers, Pramp, seniors at target companies)"
+   ],
+   "done": [
+    "Offers"
+   ]
+  }
+ ],
+ "practiceTrack": {
+  "name": "DSA",
+  "unit": "problems",
+  "target": 360,
+  "patterns": [
+   "Arrays and hashing",
+   "Strings",
+   "Two pointers",
+   "Sliding window",
+   "Linked list",
+   "Stack and queue",
+   "Binary search",
+   "Recursion and backtracking",
+   "Trees and BST",
+   "Heaps / priority queue",
+   "Graphs",
+   "Dynamic programming",
+   "Greedy and intervals",
+   "Tries",
+   "Bit manipulation and math",
+   "Revision and company sets"
+  ]
+ },
+ "weeks": [
+  {
+   "title": "Month 1, December 2026, Java core",
+   "phase": "P1",
+   "rows": [
+    {
+     "label": "W1 · Nov 30",
+     "practice": "Big-O, arrays basics",
+     "days": [
+      "JDK 21, IntelliJ, Maven; syntax, types",
+      "Control flow, methods, arrays, String vs StringBuilder",
+      "Classes, objects, constructors, static",
+      "Inheritance, polymorphism, abstract classes, interfaces",
+      "Revision of this week’s notes (60 min), then stop"
+     ],
+     "weekend": "Build a console Bank Account app"
+    },
+    {
+     "label": "W2 · Dec 7",
+     "practice": "Prefix sum, Kadane",
+     "days": [
+      "Encapsulation, records, enums",
+      "Exceptions, custom exceptions, try-with-resources",
+      "Generics, wildcards",
+      "List: ArrayList vs LinkedList",
+      "Revision of this week’s notes (60 min), then stop"
+     ],
+     "weekend": "Add exceptions to the app; Git branching, PRs"
+    },
+    {
+     "label": "W3 · Dec 14",
+     "practice": "Hashing",
+     "days": [
+      "HashMap internals, equals/hashCode",
+      "TreeMap, PriorityQueue, Deque, Comparator",
+      "Lambdas, functional interfaces",
+      "Streams: map, filter, collect, groupingBy",
+      "Revision of this week’s notes (60 min), then stop"
+     ],
+     "weekend": "Rewrite app logic with streams"
+    },
+    {
+     "label": "W4 · Dec 21",
+     "practice": "Strings",
+     "days": [
+      "Optional, java.time, BigDecimal",
+      "Java 17–21: sealed, pattern matching, switch, text blocks",
+      "File I/O, NIO",
+      "JUnit 5 basics",
+      "Revision of this week’s notes (60 min), then stop"
+     ],
+     "weekend": "Tests for the app; push to GitHub with README"
+    },
+    {
+     "label": "W5 · Dec 28",
+     "practice": "Revise W1–W4",
+     "days": [
+      "Buffer: catch up",
+      "Buffer",
+      "Self-quiz: 50 Java core questions",
+      "GitHub profile cleanup",
+      "Revision of this week’s notes (60 min), then stop"
+     ],
+     "weekend": "New Year break"
+    }
+   ]
+  },
+  {
+   "title": "Month 2, January 2027, Advanced Java and SQL basics",
+   "phase": "P1",
+   "rows": [
+    {
+     "label": "W6 · Jan 4",
+     "practice": "Two pointers",
+     "days": [
+      "Threads, Runnable, lifecycle",
+      "synchronized, volatile, race conditions",
+      "ExecutorService, thread pools, Future",
+      "CompletableFuture",
+      "Revision of this week’s notes (60 min), then stop"
+     ],
+     "weekend": "Money-transfer simulator (deadlock, then fix)"
+    },
+    {
+     "label": "W7 · Jan 11",
+     "practice": "Sliding window",
+     "days": [
+      "ReentrantLock, ReadWriteLock, atomics",
+      "ConcurrentHashMap, BlockingQueue, producer–consumer",
+      "Virtual threads (Java 21)",
+      "JVM: class loading, heap, stack, metaspace",
+      "Revision of this week’s notes (60 min), then stop"
+     ],
+     "weekend": "Producer–consumer payment queue"
+    },
+    {
+     "label": "W8 · Jan 18",
+     "practice": "Linked list",
+     "days": [
+      "Garbage collection, memory leaks",
+      "SOLID principles",
+      "Patterns: Singleton, Factory, Builder",
+      "Patterns: Strategy, Observer, Decorator",
+      "Revision of this week’s notes (60 min), then stop"
+     ],
+     "weekend": "Refactor the simulator using patterns"
+    },
+    {
+     "label": "W9 · Jan 25",
+     "practice": "Stack, queue, monotonic stack",
+     "days": [
+      "PostgreSQL setup, DDL, constraints",
+      "SELECT, GROUP BY, HAVING",
+      "All joins",
+      "Subqueries, CTEs",
+      "Revision of this week’s notes (60 min), then stop"
+     ],
+     "weekend": "Bank schema; 20 SQL problems"
+    }
+   ]
+  },
+  {
+   "title": "Month 3, February 2027, SQL deep dive and Spring Boot start",
+   "phase": "P1",
+   "rows": [
+    {
+     "label": "W10 · Feb 1",
+     "practice": "Binary search",
+     "days": [
+      "Window functions",
+      "Indexes, EXPLAIN ANALYZE",
+      "Normalization, denormalization",
+      "Transactions, ACID",
+      "Revision of this week’s notes (60 min), then stop"
+     ],
+     "weekend": "LeetCode SQL 50 (first half)"
+    },
+    {
+     "label": "W11 · Feb 8",
+     "practice": "Binary search on answer",
+     "days": [
+      "Isolation levels and anomalies",
+      "Row locks, FOR UPDATE, optimistic locking",
+      "JDBC, HikariCP",
+      "NoSQL overview",
+      "Revision of this week’s notes (60 min), then stop"
+     ],
+     "weekend": "SQL 50 (second half); JDBC transfer"
+    },
+    {
+     "label": "W12 · Feb 15",
+     "practice": "Recursion",
+     "days": [
+      "HTTP, REST, status codes",
+      "Maven/Gradle, project layout",
+      "Spring core: IoC, DI, beans, scopes",
+      "Boot auto-config, starters, profiles",
+      "Revision of this week’s notes (60 min), then stop"
+     ],
+     "weekend": "First Spring Boot REST API"
+    },
+    {
+     "label": "W13 · Feb 22",
+     "practice": "Backtracking",
+     "days": [
+      "Controllers, DTOs, MapStruct",
+      "Validation, @ControllerAdvice",
+      "Spring Data JPA, repositories",
+      "JPA relations, N+1, fetch types",
+      "Revision of this week’s notes (60 min), then stop"
+     ],
+     "weekend": "Start PayFlow: schema and account CRUD"
+    }
+   ]
+  },
+  {
+   "title": "Month 4, March 2027, Spring Boot for production",
+   "phase": "P2",
+   "rows": [
+    {
+     "label": "W14 · Mar 1",
+     "practice": "Tree traversals",
+     "days": [
+      "@Transactional, propagation",
+      "Pagination, Specifications",
+      "Flyway migrations",
+      "Logging, Actuator",
+      "Revision of this week’s notes (60 min), then stop"
+     ],
+     "weekend": "PayFlow transfers with a ledger"
+    },
+    {
+     "label": "W15 · Mar 8",
+     "practice": "BST",
+     "days": [
+      "JUnit 5 + Mockito",
+      "Integration tests, Testcontainers",
+      "Spring Security filter chain",
+      "JWT authentication",
+      "Revision of this week’s notes (60 min), then stop"
+     ],
+     "weekend": "PayFlow login and JWT"
+    },
+    {
+     "label": "W16 · Mar 15",
+     "practice": "Trees: LCA, diameter",
+     "days": [
+      "OAuth2/OIDC, Keycloak",
+      "Roles, method security",
+      "OpenAPI/Swagger",
+      "Idempotency keys, versioning",
+      "Revision of this week’s notes (60 min), then stop"
+     ],
+     "weekend": "Idempotent transfers + tests"
+    },
+    {
+     "label": "W17 · Mar 22",
+     "practice": "Heaps",
+     "days": [
+      "Redis, Spring Cache",
+      "Rate limiting",
+      "@Scheduled, @Async, ShedLock",
+      "Notification service",
+      "Revision of this week’s notes (60 min), then stop"
+     ],
+     "weekend": "Caching + rate limiting in PayFlow"
+    },
+    {
+     "label": "W18 · Mar 29",
+     "practice": "Revise trees/heaps",
+     "days": [
+      "Buffer: catch up",
+      "Buffer",
+      "PayFlow cleanup",
+      "README + architecture diagram",
+      "Revision of this week’s notes (60 min), then stop"
+     ],
+     "weekend": "Record a 3-minute demo"
+    }
+   ]
+  },
+  {
+   "title": "Month 5, April 2027, Microservices, Kafka, security",
+   "phase": "P2",
+   "rows": [
+    {
+     "label": "W19 · Apr 5",
+     "practice": "BFS, DFS",
+     "days": [
+      "Monolith vs microservices, DDD",
+      "Spring Cloud Gateway",
+      "Eureka, Config Server",
+      "RestClient, OpenFeign",
+      "Revision of this week’s notes (60 min), then stop"
+     ],
+     "weekend": "Split PayFlow into 3 services"
+    },
+    {
+     "label": "W20 · Apr 12",
+     "practice": "Islands, topo sort",
+     "days": [
+      "Kafka fundamentals",
+      "Spring Kafka producer/consumer",
+      "Outbox pattern",
+      "Saga pattern",
+      "Revision of this week’s notes (60 min), then stop"
+     ],
+     "weekend": "Transfer events through Kafka"
+    },
+    {
+     "label": "W21 · Apr 19",
+     "practice": "Dijkstra",
+     "days": [
+      "Resilience4j",
+      "Tracing: Micrometer, Zipkin",
+      "gRPC basics",
+      "WebSockets",
+      "Revision of this week’s notes (60 min), then stop"
+     ],
+     "weekend": "Resilience + tracing in PayFlow"
+    },
+    {
+     "label": "W22 · Apr 26",
+     "practice": "Union-Find, MST",
+     "days": [
+      "OWASP API Top 10",
+      "Encryption, hashing, secrets, PCI-DSS",
+      "Audit logs, PII masking",
+      "Review microservice notes",
+      "Revision of this week’s notes (60 min), then stop"
+     ],
+     "weekend": "PayFlow backend v2 done"
+    }
+   ]
+  },
+  {
+   "title": "Month 6, May 2027, Production React and full stack",
+   "phase": "P2",
+   "rows": [
+    {
+     "label": "W23 · May 3",
+     "practice": "DP 1D",
+     "days": [
+      "Advanced TypeScript",
+      "Rendering, reconciliation, keys",
+      "Hooks in depth, custom hooks",
+      "React 19, Server Components",
+      "Revision of this week’s notes (60 min), then stop"
+     ],
+     "weekend": "PayFlow frontend setup"
+    },
+    {
+     "label": "W24 · May 10",
+     "practice": "Coin change, house robber",
+     "days": [
+      "Context vs Redux Toolkit vs Zustand",
+      "TanStack Query",
+      "React Hook Form + Zod",
+      "Frontend auth, refresh tokens",
+      "Revision of this week’s notes (60 min), then stop"
+     ],
+     "weekend": "Login and dashboard"
+    },
+    {
+     "label": "W25 · May 17",
+     "practice": "DP on grids",
+     "days": [
+      "Next.js App Router, caching",
+      "Performance, Web Vitals",
+      "Accessibility",
+      "Vitest, RTL, Playwright",
+      "Revision of this week’s notes (60 min), then stop"
+     ],
+     "weekend": "Transactions UI with charts"
+    },
+    {
+     "label": "W26 · May 24",
+     "practice": "LCS, LIS",
+     "days": [
+      "XSS, CSRF, CSP",
+      "Monorepos, micro-frontends",
+      "Frontend system design",
+      "JS core: closures, event loop",
+      "Revision of this week’s notes (60 min), then stop"
+     ],
+     "weekend": "PayFlow full stack complete"
+    },
+    {
+     "label": "W27 · May 31",
+     "practice": "Revise DP",
+     "days": [
+      "Buffer: catch up",
+      "Buffer",
+      "Mid-year review",
+      "Mock interview 1",
+      "Revision of this week’s notes (60 min), then stop"
+     ],
+     "weekend": "Rest"
+    }
+   ]
+  },
+  {
+   "title": "Month 7, June 2027, Linux, Docker, CI/CD, AWS",
+   "phase": "P3",
+   "rows": [
+    {
+     "label": "W28 · Jun 7",
+     "practice": "Knapsack DP",
+     "days": [
+      "Linux commands, permissions",
+      "Processes, ssh, scripting",
+      "Networking: DNS, TCP, TLS",
+      "Docker concepts",
+      "Revision of this week’s notes (60 min), then stop"
+     ],
+     "weekend": "Dockerize one service"
+    },
+    {
+     "label": "W29 · Jun 14",
+     "practice": "DP on strings",
+     "days": [
+      "Dockerfile best practices, multi-stage",
+      "Volumes, networks",
+      "Docker Compose",
+      "Image scanning, Podman",
+      "Revision of this week’s notes (60 min), then stop"
+     ],
+     "weekend": "Whole stack in Compose"
+    },
+    {
+     "label": "W30 · Jun 21",
+     "practice": "Greedy",
+     "days": [
+      "CI/CD concepts",
+      "GitHub Actions: build + test",
+      "Build and push images",
+      "SonarQube, quality gates",
+      "Revision of this week’s notes (60 min), then stop"
+     ],
+     "weekend": "PayFlow pipeline"
+    },
+    {
+     "label": "W31 · Jun 28",
+     "practice": "Intervals",
+     "days": [
+      "AWS IAM, EC2",
+      "S3, RDS",
+      "VPC, load balancers",
+      "Deploy to ECS",
+      "Revision of this week’s notes (60 min), then stop"
+     ],
+     "weekend": "PayFlow live (billing alert first)"
+    }
+   ]
+  },
+  {
+   "title": "Month 8, July 2027, Kubernetes and Project 2",
+   "phase": "P3",
+   "rows": [
+    {
+     "label": "W32 · Jul 5",
+     "practice": "Tries",
+     "days": [
+      "K8s architecture",
+      "Pods, Deployments (kind)",
+      "Services, Ingress",
+      "ConfigMaps, Secrets",
+      "Revision of this week’s notes (60 min), then stop"
+     ],
+     "weekend": "Start TradeDesk"
+    },
+    {
+     "label": "W33 · Jul 12",
+     "practice": "Bit manipulation",
+     "days": [
+      "Probes, limits, HPA",
+      "Volumes, StatefulSets",
+      "Helm charts",
+      "Namespaces, RBAC",
+      "Revision of this week’s notes (60 min), then stop"
+     ],
+     "weekend": "TradeDesk on Kubernetes"
+    },
+    {
+     "label": "W34 · Jul 19",
+     "practice": "Matrix, math",
+     "days": [
+      "Prometheus, Grafana",
+      "Loki or ELK",
+      "Argo CD (GitOps)",
+      "OpenShift intro",
+      "Revision of this week’s notes (60 min), then stop"
+     ],
+     "weekend": "Monitoring + GitOps"
+    },
+    {
+     "label": "W35 · Jul 26",
+     "practice": "Mixed mediums",
+     "days": [
+      "Kafka Streams",
+      "WebSocket price feed",
+      "k6 load testing",
+      "JVM tuning",
+      "Revision of this week’s notes (60 min), then stop"
+     ],
+     "weekend": "TradeDesk done + demo video"
+    }
+   ]
+  },
+  {
+   "title": "Month 9, August 2027, System design",
+   "phase": "P4",
+   "rows": [
+    {
+     "label": "W36 · Aug 2",
+     "practice": "Revise arrays, strings, hashing",
+     "days": [
+      "Scalability, load balancing",
+      "Caching strategies, CDN",
+      "Replication, sharding",
+      "CAP, consistency",
+      "Revision of this week’s notes (60 min), then stop"
+     ],
+     "weekend": "HLD: URL shortener"
+    },
+    {
+     "label": "W37 · Aug 9",
+     "practice": "Revise trees, graphs",
+     "days": [
+      "Queues, pub-sub, guarantees",
+      "Rate limiter, API gateway",
+      "Consistent hashing",
+      "Distributed IDs, 2PC vs saga",
+      "Revision of this week’s notes (60 min), then stop"
+     ],
+     "weekend": "HLD: notification system"
+    },
+    {
+     "label": "W38 · Aug 16",
+     "practice": "Revise DP",
+     "days": [
+      "LLD method, UML",
+      "LLD: parking lot",
+      "LLD: ATM, Splitwise",
+      "LLD: elevator, BookMyShow",
+      "Revision of this week’s notes (60 min), then stop"
+     ],
+     "weekend": "HLD: payment system"
+    },
+    {
+     "label": "W39 · Aug 23",
+     "practice": "Hard problems",
+     "days": [
+      "HLD: chat app",
+      "HLD: news feed",
+      "HLD: order book",
+      "HLD: digital wallet",
+      "Revision of this week’s notes (60 min), then stop"
+     ],
+     "weekend": "Mock system design; update resume"
+    },
+    {
+     "label": "W40 · Aug 30",
+     "practice": "Revise",
+     "days": [
+      "Python syntax, venv",
+      "Python classes, typing, async",
+      "FastAPI basics",
+      "Buffer if behind",
+      "Revision of this week’s notes (60 min), then stop"
+     ],
+     "weekend": "Prepare for AI months"
+    }
+   ]
+  },
+  {
+   "title": "Month 10, September 2027, Agentic AI foundations + apply",
+   "phase": "P5",
+   "rows": [
+    {
+     "label": "W41 · Sep 6",
+     "practice": "Company-tagged",
+     "days": [
+      "How LLMs work",
+      "Prompt engineering, structured output",
+      "LLM APIs from Java and Python",
+      "Embeddings, similarity",
+      "Revision of this week’s notes (60 min), then stop"
+     ],
+     "weekend": "Start applying; start FinAgent"
+    },
+    {
+     "label": "W42 · Sep 13",
+     "practice": "Company-tagged",
+     "days": [
+      "RAG: chunking, retrieval",
+      "pgvector",
+      "Spring AI: ChatClient, RAG",
+      "Hybrid search, reranking",
+      "Revision of this week’s notes (60 min), then stop"
+     ],
+     "weekend": "FinAgent RAG over policies"
+    },
+    {
+     "label": "W43 · Sep 20",
+     "practice": "Company-tagged",
+     "days": [
+      "Tool calling",
+      "Agent loop, planning",
+      "LangGraph",
+      "Agent memory",
+      "Revision of this week’s notes (60 min), then stop"
+     ],
+     "weekend": "FinAgent calls PayFlow APIs"
+    },
+    {
+     "label": "W44 · Sep 27",
+     "practice": "Company-tagged",
+     "days": [
+      "MCP server",
+      "Multi-agent patterns",
+      "Human-in-the-loop",
+      "Streaming to React",
+      "Revision of this week’s notes (60 min), then stop"
+     ],
+     "weekend": "Multi-agent + chat UI"
+    }
+   ]
+  },
+  {
+   "title": "Month 11, October 2027, Production AI and interview prep",
+   "phase": "P5",
+   "rows": [
+    {
+     "label": "W45 · Oct 4",
+     "practice": "Timed sets",
+     "days": [
+      "Evals, LLM-as-judge",
+      "Guardrails, prompt injection, PII",
+      "Observability, cost, latency",
+      "Deploying AI services",
+      "Revision of this week’s notes (60 min), then stop"
+     ],
+     "weekend": "FinAgent evals + deploy"
+    },
+    {
+     "label": "W46 · Oct 11",
+     "practice": "Timed sets",
+     "days": [
+      "RAG vs fine-tuning, Ollama",
+      "AI system design",
+      "Open source: pick an issue",
+      "Open source: PR",
+      "Revision of this week’s notes (60 min), then stop"
+     ],
+     "weekend": "Demo video + blog post"
+    },
+    {
+     "label": "W47 · Oct 18",
+     "practice": "Timed sets",
+     "days": [
+      "Java interview questions",
+      "Spring Boot questions",
+      "SQL questions",
+      "8 STAR stories",
+      "Revision of this week’s notes (60 min), then stop"
+     ],
+     "weekend": "2 mock interviews"
+    },
+    {
+     "label": "W48 · Oct 25",
+     "practice": "Timed sets",
+     "days": [
+      "Timed HLD × 2",
+      "Timed LLD",
+      "Project deep-dive rehearsal",
+      "Weak topics",
+      "Revision of this week’s notes (60 min), then stop"
+     ],
+     "weekend": "2 mock interviews"
+    }
+   ]
+  },
+  {
+   "title": "Month 12, November 2027, Interview mode",
+   "phase": "P6",
+   "rows": [
+    {
+     "label": "W49 · Nov 1",
+     "practice": "Barclays-tagged",
+     "days": [
+      "Research Barclays",
+      "Java + Spring rapid fire",
+      "System design mock",
+      "Project walkthrough",
+      "Revision of this week’s notes (60 min), then stop"
+     ],
+     "weekend": "Applications + mock"
+    },
+    {
+     "label": "W50 · Nov 8",
+     "practice": "HSBC-tagged",
+     "days": [
+      "Research HSBC",
+      "SQL + concurrency rapid fire",
+      "LLD mock",
+      "Behavioral practice",
+      "Revision of this week’s notes (60 min), then stop"
+     ],
+     "weekend": "Applications + mock"
+    },
+    {
+     "label": "W51 · Nov 15",
+     "practice": "Red Hat-tagged",
+     "days": [
+      "Red Hat: Linux, OpenShift, OSS story",
+      "Kubernetes rapid fire",
+      "HLD mock",
+      "AI project walkthrough",
+      "Revision of this week’s notes (60 min), then stop"
+     ],
+     "weekend": "Applications + mock"
+    },
+    {
+     "label": "W52 · Nov 22",
+     "practice": "Product sets",
+     "days": [
+      "Weak-area revision",
+      "Offer negotiation basics",
+      "Final mock",
+      "Rest",
+      "Revision of this week’s notes (60 min), then stop"
+     ],
+     "weekend": "Plan year 2"
+    }
+   ]
+  }
+ ],
+ "targets": [
+  {
+   "month": "Dec",
+   "hours": 80,
+   "practice": 30,
+   "done": "Console app on GitHub with tests"
+  },
+  {
+   "month": "Jan",
+   "hours": 80,
+   "practice": 35,
+   "done": "Transfer simulator; bank schema"
+  },
+  {
+   "month": "Feb",
+   "hours": 80,
+   "practice": 30,
+   "done": "First Spring Boot API"
+  },
+  {
+   "month": "Mar",
+   "hours": 90,
+   "practice": 35,
+   "done": "PayFlow backend v1"
+  },
+  {
+   "month": "Apr",
+   "hours": 80,
+   "practice": 30,
+   "done": "PayFlow microservices + Kafka"
+  },
+  {
+   "month": "May",
+   "hours": 90,
+   "practice": 30,
+   "done": "PayFlow full stack"
+  },
+  {
+   "month": "Jun",
+   "hours": 80,
+   "practice": 30,
+   "done": "PayFlow deployed with CI/CD"
+  },
+  {
+   "month": "Jul",
+   "hours": 80,
+   "practice": 25,
+   "done": "TradeDesk on Kubernetes"
+  },
+  {
+   "month": "Aug",
+   "hours": 90,
+   "practice": 30,
+   "done": "8 HLD + 4 LLD case studies"
+  },
+  {
+   "month": "Sep",
+   "hours": 80,
+   "practice": 30,
+   "done": "FinAgent v1; 20+ applications sent"
+  },
+  {
+   "month": "Oct",
+   "hours": 80,
+   "practice": 30,
+   "done": "FinAgent with evals; OSS PR; 4 mocks"
+  },
+  {
+   "month": "Nov",
+   "hours": 80,
+   "practice": 25,
+   "done": "Offers"
+  }
+ ],
+ "projects": [
+  {
+   "name": "PayFlow: digital banking and payments platform",
+   "when": "Feb – Jun 2027",
+   "phase": "P2",
+   "stack": "Java 21, Spring Boot, Spring Security (JWT, OAuth2/Keycloak), PostgreSQL, Redis, Kafka, Next.js + TypeScript, Docker, GitHub Actions, AWS",
+   "features": [
+    "Customer onboarding, accounts, balances and statements",
+    "Money transfers through a double-entry ledger (every debit has a matching credit)",
+    "Idempotency keys so a retried request never moves money twice",
+    "Concurrency control: SELECT ... FOR UPDATE and optimistic locking",
+    "Transfer saga across services with the transactional outbox and Kafka",
+    "Audit log, rate limiting, PII masking, role-based access",
+    "Next.js dashboard with charts, optimistic transfers and E2E tests",
+    "80%+ test coverage with Testcontainers; CI/CD to AWS"
+   ],
+   "milestones": [
+    "Feb: schema + CRUD",
+    "Mar: v1 backend (auth, ledger, idempotency)",
+    "Apr: microservices + Kafka",
+    "May: frontend",
+    "Jun: Docker + CI/CD + AWS"
+   ]
+  },
+  {
+   "name": "TradeDesk: real-time trading and portfolio system",
+   "when": "Jul 2027",
+   "phase": "P3",
+   "stack": "Spring Boot microservices, Kafka Streams, WebSockets, Kubernetes, Helm, Argo CD, Prometheus/Grafana, OpenShift sandbox",
+   "features": [
+    "Order-matching engine (limit and market orders, price-time priority)",
+    "Live price feed over WebSockets; portfolio and P&L service",
+    "Kafka Streams for real-time aggregates",
+    "Kubernetes deployment with Helm, HPA autoscaling and probes",
+    "Grafana dashboards; k6 load test with published numbers",
+    "GitOps deploys with Argo CD; also deployed to OpenShift sandbox"
+   ],
+   "milestones": [
+    "W32: design + skeletons",
+    "W33: on Kubernetes",
+    "W34: monitoring + GitOps",
+    "W35: load test + demo"
+   ]
+  },
+  {
+   "name": "FinAgent: agentic AI financial assistant",
+   "when": "Sep – Oct 2027",
+   "phase": "P5",
+   "stack": "Spring AI and/or LangGraph (Python), pgvector, MCP server, React chat UI, Docker/Kubernetes",
+   "features": [
+    "RAG over bank policy documents and a user's transaction history, with citations",
+    "Agents that call PayFlow APIs as tools (balance, spend analysis, transfers)",
+    "Human approval required before any money moves",
+    "MCP server exposing PayFlow tools to any MCP client",
+    "Guardrails against prompt injection; PII redaction",
+    "Eval suite (golden questions, LLM-as-judge) with scores in the README",
+    "Tracing with Langfuse; cost and latency dashboard"
+   ],
+   "milestones": [
+    "W41: setup",
+    "W42: RAG",
+    "W43: tools",
+    "W44: multi-agent + UI",
+    "W45: evals + deploy",
+    "W46: demo + blog"
+   ]
+  }
+ ],
+ "projectChecklist": [
+  "Problem statement and screenshots",
+  "Architecture diagram",
+  "Tech choices with reasons",
+  "Runs with one command",
+  "Test coverage and load-test results",
+  "Live link or demo video"
+ ],
+ "extras": [
+  "Open-source PR merged (Java, Kubernetes or React component library)",
+  "Design-system package published with Storybook (optional)"
+ ],
+ "jobHunt": [
+  "Resume updated: projects first, numbers in every bullet",
+  "LinkedIn headline updated",
+  "PayFlow, TradeDesk and FinAgent pinned on GitHub",
+  "8 STAR stories written",
+  "Referrals: 3 asked this week",
+  "Applications: 5–10 sent this week",
+  "Mock interview 1 done (W27)",
+  "Mock interview 2 done (W39)",
+  "Barclays prep done",
+  "HSBC prep done",
+  "Red Hat prep done"
+ ]
+}

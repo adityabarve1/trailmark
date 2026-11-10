@@ -1,0 +1,41 @@
+{
+  "name": "trailmark-mobile",
+  "main": "expo-router/entry",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "setup": "expo install expo-router expo-secure-store expo-status-bar expo-linking expo-constants expo-clipboard expo-haptics expo-splash-screen react react-native react-native-svg react-native-safe-area-context react-native-screens @react-native-async-storage/async-storage && expo install typescript @types/react -- --save-dev",
+    "start": "expo start",
+    "android": "expo start --android",
+    "ios": "expo start --ios",
+    "doctor": "npx expo-doctor",
+    "typecheck": "tsc --noEmit",
+    "build:apk": "eas build --platform android --profile preview",
+    "build:android": "eas build --platform android --profile production",
+    "build:ios": "eas build --platform ios --profile production",
+    "submit:android": "eas submit --platform android --latest",
+    "submit:ios": "eas submit --platform ios --latest"
+  },
+  "dependencies": {
+    "@react-native-async-storage/async-storage": "2.2.0",
+    "@supabase/supabase-js": "^2.45.4",
+    "@types/react": "~19.3.0",
+    "expo": "*",
+    "expo-clipboard": "~58.0.4",
+    "expo-constants": "~58.0.14",
+    "expo-haptics": "~58.0.7",
+    "expo-linking": "~58.0.15",
+    "expo-router": "~58.0.28",
+    "expo-secure-store": "~58.0.2",
+    "expo-splash-screen": "~58.0.12",
+    "expo-status-bar": "~58.0.4",
+    "react": "19.3.0",
+    "react-dom": "19.3.0",
+    "react-native": "0.88.1",
+    "react-native-safe-area-context": "~5.10.1",
+    "react-native-screens": "~4.30.0",
+    "react-native-svg": "15.16.0",
+    "react-native-url-polyfill": "^2.0.0",
+    "typescript": "~6.0.3"
+  }
+}

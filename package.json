@@ -1,0 +1,22 @@
+{
+  "name": "trailmark",
+  "private": true,
+  "description": "Trailmark monorepo: web app (apps/web), Android + iOS app with Expo (apps/mobile), shared code (packages/core).",
+  "scripts": {
+    "setup": "node scripts/setup.mjs",
+    "web": "npm --prefix apps/web run dev",
+    "web:build": "npm --prefix apps/web run build",
+    "mobile": "npm --prefix apps/mobile run start",
+    "typecheck": "npm --prefix apps/web run typecheck && npm --prefix apps/mobile run typecheck",
+    "seed:owner": "node scripts/seed-owner.mjs",
+    "db:push": "supabase db push",
+    "fn:deploy": "supabase functions deploy delete-account"
+  },
+  "devDependencies": {
+    "@supabase/supabase-js": "^2.45.4",
+    "supabase": "^2.0.0"
+  },
+  "engines": {
+    "node": ">=22.13"
+  }
+}

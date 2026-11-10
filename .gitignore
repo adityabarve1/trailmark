@@ -1,0 +1,22 @@
+node_modules
+.env
+.env.local
+.env.*.local
+*.log
+.DS_Store
+# web
+apps/web/dist
+apps/web/dev-dist
+.vercel
+# mobile (Expo)
+apps/mobile/.expo
+apps/mobile/dist
+apps/mobile/android
+apps/mobile/ios
+*.jks
+*.keystore
+*.p8
+*.p12
+*.mobileprovision
+# backups contain personal data
+plan-tracker-backup-*.json

@@ -1,0 +1,42 @@
+{
+  "expo": {
+    "name": "Trailmark",
+    "slug": "trailmark",
+    "scheme": "trailmark",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "automatic",
+    "ios": {
+      "bundleIdentifier": "com.adityabarve.trailmark",
+      "supportsTablet": true,
+      "config": {
+        "usesNonExemptEncryption": false
+      }
+    },
+    "android": {
+      "package": "com.adityabarve.trailmark",
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#152036"
+      }
+    },
+    "plugins": [
+      "expo-router",
+      "expo-secure-store",
+      [
+        "expo-splash-screen",
+        {
+          "image": "./assets/splash-icon.png",
+          "imageWidth": 180,
+          "resizeMode": "contain",
+          "backgroundColor": "#152036",
+          "dark": {
+            "backgroundColor": "#0C1220"
+          }
+        }
+      ],
+      "expo-status-bar"
+    ]
+  }
+}
