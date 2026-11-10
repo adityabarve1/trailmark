@@ -15,7 +15,10 @@
     "noEmit": true,
     "types": ["vite/client"],
     "baseUrl": ".",
-    "paths": { "@trailmark/core": ["../../packages/core/src/index.ts"] }
+    "paths": {
+      "@trailmark/core": ["../../packages/core/src/index.ts"],
+      "@supabase/supabase-js": ["./node_modules/@supabase/supabase-js"]
+    }
   },
   "include": ["src", "../../packages/core/src"]
 }

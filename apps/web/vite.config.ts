@@ -27,11 +27,13 @@ const csp = (): Plugin => ({
 });
 
 const core = fileURLToPath(new URL("../../packages/core/src/index.ts", import.meta.url));
+const supabase = fileURLToPath(new URL("./node_modules/@supabase/supabase-js", import.meta.url));
 const repoRoot = fileURLToPath(new URL("../..", import.meta.url));
 
 export default defineConfig({
   // Shared code lives in packages/core; alias it and allow Vite to serve files from the repo root.
-  resolve: { alias: { "@trailmark/core": core } },
+  // Resolve supabase-js from this app so packages/core builds where only apps/web is installed (Vercel).
+  resolve: { alias: { "@trailmark/core": core, "@supabase/supabase-js": supabase } },
   server: { fs: { allow: [repoRoot] } },
   plugins: [
     react(),
