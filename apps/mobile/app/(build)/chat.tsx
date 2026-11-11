@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { ActivityIndicator, Alert, ScrollView, Text, View, type ScrollViewInstance } from "react-native";
 import { useRouter } from "expo-router";
 import {
-  buildRoadmapPrompt, chat, hasCompleteDocument, parseRoadmapText, PROVIDERS, providerInfo, todayISO,
+  buildRoadmapPrompt, chat, ENFORCE_PLANS, FREE_MAX_WEEKS, hasCompleteDocument, isPro, parseRoadmapText, planLimitError, PROVIDERS, providerInfo, todayISO,
   type ChatMessage, type ProviderId,
 } from "@trailmark/core";
 import { useAuth } from "../../src/lib/auth";
@@ -14,7 +14,7 @@ import { radius, useTheme } from "../../src/theme";
 export default function BuildChat() {
   const t = useTheme();
   const router = useRouter();
-  const { user } = useAuth();
+  const { user, profile } = useAuth();
   const [provider, setProvider] = useState<ProviderId>("anthropic");
   const [model, setModel] = useState(providerInfo("anthropic").defaultModel);
   const [hasKey, setHasKey] = useState<boolean | null>(null);
@@ -29,13 +29,15 @@ export default function BuildChat() {
   useEffect(() => { if (user) loadKey(user.id, provider).then((k) => setHasKey(!!k)); }, [user, provider]);
   useEffect(() => { chatMemory.messages = messages; setTimeout(() => scroller.current?.scrollToEnd({ animated: true }), 50); }, [messages]);
 
-  const system = buildRoadmapPrompt({ todayISO: todayISO() });
+  const system = buildRoadmapPrompt({ todayISO: todayISO(), maxWeeks: !ENFORCE_PLANS || isPro(profile) ? undefined : FREE_MAX_WEEKS });
 
   function openDoc(convo: ChatMessage[]) {
     const all = convo.filter((m) => m.role === "assistant").map((m) => m.content).join("");
     const at = all.indexOf("<<<ROADMAP_V1");
     const res = parseRoadmapText(at >= 0 ? all.slice(at) : all);
-    if (res.ok) { setDraft(res.roadmap); router.push("/preview"); } else setDocErr(res.errors);
+    if (!res.ok) { setDocErr(res.errors); return; }
+    const limit = planLimitError(res.roadmap, profile);
+    if (limit) setDocErr([limit]); else { setDraft(res.roadmap); router.push("/preview"); }
   }
 
   async function send(text: string) {

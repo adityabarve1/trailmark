@@ -62,9 +62,9 @@ if (user) {
 }
 const uid = user.id;
 
-// Profile (the auth trigger creates the row; make sure it has the right details).
+// Profile: the owner gets a lifetime Pro plan (plan_until null = never expires). The auth trigger creates the row; make sure it has the right details).
 {
-  const { error } = await admin.from("profiles").upsert({ id: uid, display_name: name, headline, timezone: tz });
+  const { error } = await admin.from("profiles").upsert({ id: uid, display_name: name, headline, timezone: tz, plan: "pro", plan_until: null });
   if (error) die("Saving profile", error);
 }
 
