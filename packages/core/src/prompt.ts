@@ -7,7 +7,7 @@ import { BEGIN, END } from "./parse";
  *    after which they paste the reply back into the app.
  * The output contract must match schema.ts.
  */
-export function buildRoadmapPrompt(opts: { todayISO: string; learnerNotes?: string }): string {
+export function buildRoadmapPrompt(opts: { todayISO: string; learnerNotes?: string; maxWeeks?: number }): string {
   return `You are Trailmark's roadmap architect: a senior engineering mentor who designs realistic, week-by-week study plans for working people.
 
 Today's date is ${opts.todayISO}.
@@ -92,6 +92,6 @@ If the document is too long for one reply, stop at the end of a complete array i
 }
 
 Constraints the app checks: "phase" values must match a key in "phases"; every module has at least one topic with subtopics; the total number of week rows equals the plan length in weeks (maximum 104); "startDate" is a Monday. If I have no job hunt, use an empty "jobHunt" array. If I don't want a practice track, set "practiceTrack" to { "name": "Practice", "unit": "sessions", "target": 0, "patterns": ["General"] }.
-${opts.learnerNotes ? `\nNotes from me before we start: ${opts.learnerNotes}\n` : ""}
+${opts.maxWeeks ? `\nPlan length limit: this account is on the Free plan, so the plan can be at most ${opts.maxWeeks} weeks (30 days) long. Tell me this limit when you ask about total length, and if I want longer, offer ${opts.maxWeeks} weeks instead. Never output more than ${opts.maxWeeks} week rows.\n` : ""}${opts.learnerNotes ? `\nNotes from me before we start: ${opts.learnerNotes}\n` : ""}
 Start now with Step 1: greet me in one sentence and ask your first round of questions.`;
 }

@@ -2,7 +2,7 @@ import { useEffect, useRef, useState, type ReactNode } from "react";
 import { useAuth } from "../lib/auth";
 import { Link, useRouter } from "../lib/router";
 import { buildRoadmapPrompt } from "@trailmark/core";
-import { hasCompleteDocument, parseRoadmapText } from "@trailmark/core";
+import { ENFORCE_PLANS, FREE_MAX_WEEKS, hasCompleteDocument, isPro, parseRoadmapText, planLimitError } from "@trailmark/core";
 import { getDraft, setDraft } from "../lib/roadmap/draft";
 import { chat, PROVIDERS, providerInfo, type ChatMessage, type ProviderId } from "@trailmark/core";
 import { loadKey } from "../lib/ai/keyVault";
@@ -51,7 +51,7 @@ export function Start() {
 const CHAT_KEY = "trailmark:chat";
 
 export function BuildChat() {
-  const { user } = useAuth();
+  const { user, profile } = useAuth();
   const { go } = useRouter();
   const [provider, setProvider] = useState<ProviderId>("anthropic");
   const [model, setModel] = useState(providerInfo("anthropic").defaultModel);
@@ -69,7 +69,7 @@ export function BuildChat() {
   useEffect(() => { if (user) loadKey(user.id, provider).then((k) => setHasKey(!!k)); }, [user, provider]);
   useEffect(() => { try { sessionStorage.setItem(CHAT_KEY, JSON.stringify(messages)); } catch { /* ignore */ } end.current?.scrollIntoView({ behavior: "smooth", block: "end" }); }, [messages]);
 
-  const system = buildRoadmapPrompt({ todayISO: todayISO() });
+  const system = buildRoadmapPrompt({ todayISO: todayISO(), maxWeeks: !ENFORCE_PLANS || isPro(profile) ? undefined : FREE_MAX_WEEKS });
 
   async function send(text: string, base = messages) {
     if (!user) return;
@@ -103,8 +103,10 @@ export function BuildChat() {
   function tryOpen(convo = messages) {
     const all = convo.filter((m) => m.role === "assistant").map((m) => m.content).join("");
     const res = parseRoadmapText(all.slice(all.indexOf("<<<ROADMAP_V1") === -1 ? 0 : all.indexOf("<<<ROADMAP_V1")));
-    if (res.ok) { setDraft(res.roadmap); go("/build/preview"); }
-    else setDocErr(res.errors);
+    if (res.ok) {
+      const limit = planLimitError(res.roadmap, profile);
+      if (limit) setDocErr([limit]); else { setDraft(res.roadmap); go("/build/preview"); }
+    } else setDocErr(res.errors);
   }
 
   const docReady = messages.some((m) => m.role === "assistant" && m.content.includes("<<<ROADMAP_V1"));
@@ -161,12 +163,13 @@ export function BuildChat() {
 }
 
 export function BuildImport() {
+  const { profile } = useAuth();
   const { go } = useRouter();
   const [copied, setCopied] = useState(false);
   const [notes, setNotes] = useState("");
   const [text, setText] = useState("");
   const [errors, setErrors] = useState<string[]>([]);
-  const prompt = buildRoadmapPrompt({ todayISO: todayISO(), learnerNotes: notes.trim() || undefined });
+  const prompt = buildRoadmapPrompt({ todayISO: todayISO(), learnerNotes: notes.trim() || undefined, maxWeeks: !ENFORCE_PLANS || isPro(profile) ? undefined : FREE_MAX_WEEKS });
 
   async function copy() {
     try { await navigator.clipboard.writeText(prompt); setCopied(true); setTimeout(() => setCopied(false), 2500); }
@@ -174,7 +177,9 @@ export function BuildImport() {
   }
   function check(raw = text) {
     const res = parseRoadmapText(raw);
-    if (res.ok) { setDraft(res.roadmap); go("/build/preview"); } else setErrors(res.errors);
+    if (!res.ok) { setErrors(res.errors); return; }
+    const limit = planLimitError(res.roadmap, profile);
+    if (limit) setErrors([limit]); else { setDraft(res.roadmap); go("/build/preview"); }
   }
 
   return (

@@ -4,6 +4,7 @@ import { Router, useRouter } from "./lib/router";
 import { TrackerProvider, useTracker } from "./lib/tracker";
 import { Shell } from "./components/Shell";
 import { Spinner } from "./components/ui";
+import { Landing } from "./pages/Landing";
 import { Login, Register, Reset } from "./pages/Auth";
 import { Start, BuildChat, BuildImport, BuildPreview } from "./pages/Build";
 import { Today } from "./pages/Today";
@@ -38,6 +39,7 @@ function Routes() {
   if (loading) return <div className="boot"><Spinner /></div>;
 
   if (!session) {
+    if (path === "/") return <Landing />;
     if (path === "/register") return <Register />;
     if (path === "/reset") return <Reset />;
     if (path !== "/login") return <Redirect to="/login" />;

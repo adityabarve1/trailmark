@@ -6,6 +6,7 @@ export * from "./prompt";
 export * from "./plan";
 export * from "./dates";
 export * from "./stats";
+export * from "./entitlements";
 export * from "./types";
 export * from "./providers";
 export * from "./api";
