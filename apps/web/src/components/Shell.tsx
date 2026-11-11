@@ -1,4 +1,4 @@
-import type { ReactNode } from "react";
+import { useState, type ReactNode } from "react";
 import { Link, useRouter } from "../lib/router";
 import { useTracker } from "../lib/tracker";
 import { useAuth } from "../lib/auth";
@@ -17,7 +17,12 @@ const NAV = [
 export function Shell({ children }: { children: ReactNode }) {
   const { path } = useRouter();
   const { save, roadmap } = useTracker();
-  const { profile } = useAuth();
+  const { profile, user, signOut } = useAuth();
+  const [imgFailed, setImgFailed] = useState(false);
+  const meta = user?.user_metadata as { avatar_url?: string; picture?: string } | undefined;
+  const photo = meta?.avatar_url || meta?.picture;
+  const { go } = useRouter();
+  const name = profile?.display_name?.trim() || "You";
   const status = save.kind === "saving" ? "Saving…" : save.kind === "saved" ? "Saved" : save.kind === "error" ? `Not saved: ${save.message}` : "";
   return (
     <div className="shell">
@@ -31,8 +36,18 @@ export function Shell({ children }: { children: ReactNode }) {
           ))}
         </nav>
         <div className="sidebar-foot">
-          <p className="who">{profile?.display_name ?? ""}</p>
-          <p className="muted small">{roadmap?.title}</p>
+          <div className="who-row">
+            {photo && !imgFailed
+              ? <img className="avatar" src={photo} alt="" referrerPolicy="no-referrer" onError={() => setImgFailed(true)} />
+              : <span className="avatar" aria-hidden="true">{name.charAt(0).toUpperCase()}</span>}
+            <div className="who-text">
+              <p className="who">{name}</p>
+              <p className="muted small">{roadmap?.title}</p>
+            </div>
+          </div>
+          <button type="button" className="btn btn-outline btn-sm signout" onClick={async () => { await signOut(); go("/login", true); }}>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 4H5v16h4M16 8l4 4-4 4M20 12H9" /></svg>Sign out
+          </button>
         </div>
       </aside>
       <main className="main">
